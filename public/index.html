@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <title>App</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  </head>
+  <body>
+
+		<!-- navbar -->
+		<nav class="navbar navbar-light bg-dark flexMe">
+		  <a href="/" target="_blank" class="navbar-brand text-align-center text-light p-0 m-0">ο Ιησούς είναι ο βοσκός μου</a>
+		  <div class="btn-group col-md-2 text-center">
+			  <div class="btn-group p-1">
+			    	<a class="text-light btn-outline-success p-2 m-2 text-decoration-none" href="#add">Add</a>
+			    	<a class="btn-outline-success p-2 text-decoration-none text-light m-2" href="#list">List</a>
+			  </div>
+			</div>
+		</nav>
+
+
+
+		<!-- add form -->
+		<div class="flexMeCol form bg-dark text-light container p-5 shadow" id="add">
+			<h1 class="text-center text-light">Add Subject</h1>
+			<form class="container" id="form">
+			  <div class="form-group">
+			    <label for="subjectName">Subject Name</label>
+			    <input required="true" name="subjectName" type="text" class="form-control" id="subjectName" placeholder="Enter the name of the subject...">
+			  </div>
+			  <div class="form-group">
+			    <label for="subjectName">Professor Name</label>
+			    <input required="true" name="profName" type="text" class="form-control" id="profName" placeholder="Enter the name of the prof...">
+			  </div>
+			<div class="flexMe" id="list">
+				<div class="flexMe form-group p-2">
+			  <div class="form-group">
+			    <label for="start">Start lecture number</label>
+			    <input required="true" name="firstNumber" type="number" class="form-control" id="start" placeholder="Enter the start of the video lectures...">
+			  </div>
+
+			  <div class="form-group">
+			    <label for="subjectName">End lecture number</label>
+			    <input required="true" name="lastNumber" type="number" class="form-control" id="endLecture" placeholder="Enter the end of the video lectures...">
+			  </div>	
+			</div>
+			</div>
+			<div class="btn-group col-12 p-5"  id ="filterDay">
+				  <div class="custom-control custom-radio custom-control-inline">
+					  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+					  <label class="custom-control-label" for="customRadioInline1">Good</label>
+				  </div>
+					<div class="custom-control custom-radio custom-control-inline">
+					  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+					  <label class="custom-control-label" for="customRadioInline2">Medium</label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+					  <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+					  <label class="custom-control-label" for="customRadioInline3">poor</label>
+					</div>
+			</div>
+			<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#resourceModal" id="resourceModalBtn">
+			 	Add Reference
+			</button>
+			<hr class="bg-danger">
+			  <button type="submit" class="btn btn-outline-info" id="addSubjectBtn">Add Subject</button>
+			  <button type="button" class="btn btn-primary" data-toggle="modal" id="click" data-target=".bd-example-modal-sm">Click</button>
+
+			</form>
+		</div>
+		<div class="m-2"></div>
+		<!-- quote section -->
+		<div class="flexMe p-2">
+			<div class="jumbotron container p-5 bg-dark text-light shadow rounded">
+			  <h1 class="display-5 text-align-left text-light" id="author">A.P.J. Abdul Kalam</h1>
+			  <p id = "quote" class="lead text-success">Dream is not that which you see while sleeping it is something that does not let you sleep.</p>
+			  <a class="btn btn-outline-warning" href="#" id="listSubjects" role="button">List Subjects</a>
+			  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl" id="hideContent">HideContent</button>
+			  <button class="btn btn-primary hidethisbtn">CloseDiv</button>
+			</div>
+		</div>
+
+<!-- modal -->
+	<div class="modal fade" id="resourceModal" tabindex="-1" role="dialog" aria-labelledby="resourceModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="resourceModalLabel">Add Reference...</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	      	<div class="form-group">
+			  <input type="text" class="form-control" placeholder="Add link ...." id="resourceInput">
+			</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-outline-success" id="getLink">Add Ref</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<!-- error handling model -->
+	<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	  <div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content text-align-center" id="erroMessageContentDiv">
+	      <p class="text-align-center m-2 p-2" id="errorMessage"></p>
+	    </div>
+	  </div>
+	</div>
+
+
+
+
+<!-- this container will hold all the subjects cards that are received from the database! -->
+
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+    	<h1 class="m-3 flexMe">Subjects</h1>
+    	<div class="container cardListContainer m-2">
+		</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<!-- custom script! -->
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
+</html>

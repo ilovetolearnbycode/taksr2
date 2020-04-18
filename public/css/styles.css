@@ -1,0 +1,84 @@
+html,body{
+	width:100%;
+	min-height: 100vh;
+	background: #343a40;
+	scroll-behavior: smooth;
+}
+.flexMe{
+	width:100%;
+	display: flex;
+	align-items: space-between;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.flexMeCol{
+	width:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.form{
+	margin:0.1rem auto !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+p{
+	text-align: center;
+}
+
+
+#click{
+	display: none;
+}
+
+.cardListContainer{
+	width:100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+	grid-template-rows: repeat(auto-fit,minmax(300px,1fr));
+}
+.place_button{
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+.bottom_auto{
+	margin:1rem;
+	display: flex;
+	flex-direction: column;
+	align-self: flex-end;
+	justify-content: center;
+}
+
+#hideContent{
+	display: none;
+}
+
+.hidethisbtn{
+	display: none;
+}
+
+#filterDay{
+	width:100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#hideUpdateBtn{
+	display:none;
+}
+
+#additonalReferenceHiddenClick{
+	display: none;
+}
